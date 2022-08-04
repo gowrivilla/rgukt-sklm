@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+<div class="g">
+	<h1 align="center" >Login</h1>
+	<form name="f1" onsubmit="sub();">
+		F Name<input type="text" name="n1" value="J"placeholder="First Name"><br><br>
+		S Name<input type="text" name="n2" value="VishnuPriyanka"placeholder="Last Name"><br><br>
+      UN<input type="text" value="JV" name="u" placeholder="User Name"><br><br>
+		PSW<input type="text" name="p" placeholder="Password"><br><br>
+		Email<input type="text" name="e" placeholder="E-mail"><br><br>
+		Phone number<input type="tel" name="t" placeholder="Phone Number"><br><br>
+		<input type="submit" value="Login"><br><br>
+	</form>
+</div>
+<script type="text/javascript">
+	function sub()
+	{
+		var f_name=document.f1.n1.value;
+		var l_name=document.f1.n2.value;
+		var u_name=document.f1.u.value;
+		var pass=document.f1.p.value;
+		var mail=document.f1.e.value;
+		var tel=document.f1.t.value;
+
+		var n=/[A-z]*/;
+		var s=f_name.match(n);
+		if ((f_name!=s)||(f_name.length==0)) 
+		{
+			alert("Invalid First Name");
+			return false;
+		}
+		var p=l_name.match(n);
+		if (l_name!=p||(l_name.length==0)) 
+		{
+			alert("Invalid Last Name");
+			return false;
+		}
+
+		u=u_name.length;
+		if ((u<6)||(u>15))
+		{
+			alert("Invalid User Name")
+			return false;
+		}
+
+		var a=pass.length;
+		var x=/[A-z]*/;
+		var n=pass.match(x);
+		var m=pass.match(/[A-Z]/g);
+		var m1=pass.match(/[a-z]/g);
+		var m2=pass.match(/\W/g);
+		var m3=pass.match(/\d/g);	
+		if ((a<6)||(n==null)||(m==null)||(m1==null)||(m2==null)||(m3==null))
+		{
+			alert("Invalid Password")
+			return false;
+		}
+		document.write(n);
+		if(n==null)
+		{
+		  alert("Invalid Password");
+			return false;
+		}
+		
+		
+		var pat=/[A-z]\w+@[A-z]{5,10}.[A-z]+/;
+		var v=mail.match(pat);
+		if(mail!=v)
+		{
+			alert("Invalid E-mail");
+			return false;
+		}
+		
+		t=tel.length;
+		if(t!=10)
+		{
+			alert("Invalid Phone Number");
+			return false;
+		}
+		
+		document.write("First Name: "+f_name+"<br>Second Name: "+l_name+"<br>User Name:"+u_name+"<br>Password: "+pass+"<br>E-mail: "+mail+"<br>Phone Number: "+tel+"<br>");
+	}
+</script>
+</body>
+</html>	

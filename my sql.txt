@@ -1,0 +1,141 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.27 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE CSE;
+Database changed
+mysql> create table student(id int,name char(20),major char(20));
+Query OK, 0 rows affected (2.58 sec)
+
+mysql> insert into student values(1,TOM,biology);
+ERROR 1054 (42S22): Unknown column 'TOM' in 'field list'
+mysql> insert into student values(1,tom,biology);
+ERROR 1054 (42S22): Unknown column 'tom' in 'field list'
+mysql>  insert into student values(1,tom,biology)
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> ;
+ERROR 1054 (42S22): Unknown column 'tom' in 'field list'
+mysql>  insert into student values(1,milly,biology);
+ERROR 1054 (42S22): Unknown column 'milly' in 'field list'
+mysql>  insert into student values(1,"tom","biology");
+Query OK, 1 row affected (0.16 sec)
+
+mysql>  insert into student values(2,"kate","socialogy");
+Query OK, 1 row affected (0.23 sec)
+
+mysql>  insert into student values(3,"chire","chemistry");
+Query OK, 1 row affected (0.28 sec)
+
+mysql>  insert into student values(4,"jack","cse");
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select*from students;
+ERROR 1146 (42S02): Table 'cse.students' doesn't exist
+mysql> select*from student;
++------+-------+-----------+
+| id   | name  | major     |
++------+-------+-----------+
+|    1 | tom   | biology   |
+|    2 | kate  | socialogy |
+|    3 | chire | chemistry |
+|    4 | jack  | cse       |
++------+-------+-----------+
+4 rows in set (0.08 sec)
+
+mysql> prepare stmt from "select name,major from student where id=?";
+Query OK, 0 rows affected (0.35 sec)
+Statement prepared
+
+mysql> set @id=1;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> execute stmt using @id;
++------+---------+
+| name | major   |
++------+---------+
+| tom  | biology |
++------+---------+
+1 row in set (0.10 sec)
+
+mysql> create table std_det values(s.no int,name char(20),marks int,grade char(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(s.no int,name char(20),marks int,grade char(20))' at line 1
+mysql>  create table std_det values(idint,name char(20),marks int,grade char(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(idint,name char(20),marks int,grade char(20))' at line 1
+mysql>  create table std_det (id int,name char(20),marks int, grade char(20));
+Query OK, 0 rows affected (1.41 sec)
+
+mysql> insert into std_det values(1,"gowri",100,"A");
+Query OK, 1 row affected (0.15 sec)
+
+mysql>  insert into std_det values(2,"priya",92,"B");
+Query OK, 1 row affected (0.16 sec)
+
+mysql>  insert into std_det values(3,"gayu",85,"c");
+Query OK, 1 row affected (0.14 sec)
+
+mysql>  insert into std_det values(4,"ammu",79,"D");
+Query OK, 1 row affected (0.43 sec)
+
+mysql> select *from stu_det;
+ERROR 1146 (42S02): Table 'cse.stu_det' doesn't exist
+mysql>  select *from std_det;
++------+-------+-------+-------+
+| id   | name  | marks | grade |
++------+-------+-------+-------+
+|    1 | gowri |   100 | A     |
+|    2 | priya |    92 | B     |
+|    3 | gayu  |    85 | c     |
+|    4 | ammu  |    79 | D     |
++------+-------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> prepare stmt from "select id,name,marks from std_det where marks>?;
+    "> ;
+    ">
+    ">
+    ">
+    ">
+    ">
+    "> ;
+    "> "
+    -> ;
+Query OK, 0 rows affected (0.00 sec)
+Statement prepared
+
+mysql> prepare stmt from "select id,name,marks from std_det where marks>?";
+Query OK, 0 rows affected (0.00 sec)
+Statement prepared
+
+mysql> set @marks=90;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> execute stmt using @marks;
++------+-------+-------+
+| id   | name  | marks |
++------+-------+-------+
+|    1 | gowri |   100 |
+|    2 | priya |    92 |
++------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+

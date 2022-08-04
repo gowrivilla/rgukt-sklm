@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>6.GENDER</title>
+ </head>
+<body>
+<center>
+<h1 align="center"><u>6.GENDER</u></h1>
+<h2><u>REGISTRATION PAGE part-6</u></h2>
+<table border="3">
+<tr>
+<td>
+<form>
+<table cellspacing="10" cellpadding="5">
+<tr>
+<td>GENDER</td>
+<td><input type="radio" name="gender" value="M/">MALE
+    <input type="radio" name="gender" value="F/">FEMALE </td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

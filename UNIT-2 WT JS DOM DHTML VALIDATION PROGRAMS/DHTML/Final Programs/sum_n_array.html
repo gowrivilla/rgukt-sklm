@@ -1,0 +1,19 @@
+<!-- Program to take n values from the user and produce their sum-->
+<html>
+<head>
+</head>
+<body onload="oper();">
+<script type="text/javascript">
+function oper()
+{
+     var n=parseInt(prompt("enter how many values you want to enter"));
+	 var sum=0;
+	 for(i=0;i<n;i++)
+	 {
+	     var v=parseInt(prompt("enter the"+(i+1)+"value:"));
+		 sum=sum+v;
+	 }
+	 document.write("the sum of the entered values are:"+sum);
+}
+</script>
+</body>

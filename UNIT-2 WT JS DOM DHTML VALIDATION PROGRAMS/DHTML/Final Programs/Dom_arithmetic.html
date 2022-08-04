@@ -1,0 +1,74 @@
+<!-- Arithmetic operations-->
+<html>
+<head>
+<title>Arithmetic Operations</title>
+<style type="text/css">
+h1{
+font-size:38px;
+font-family:gabriola;
+color:white;
+font-weight:bold;
+background-color:darkmagenta;
+border-radius:10px;
+text-align:center;
+}
+input{
+color:red;
+background-color:aqua;
+font-size:35px;
+}
+input:hover{
+color:navy;
+background-color:yellow;
+font-size:35px;
+}
+select{
+color:red;
+background-color:seashell;
+font-size:35px;
+}
+button{
+font-size:35px;
+color:red;
+background-color:yellow;
+}
+
+
+</style> 
+</head>
+<body>
+<center>
+<h1>Arithematic Operations</h1>
+<form name="f1" >
+<input type="text" name="n">
+<select name="d" >
+<option value="plus">+</option>
+<option value="minus">-</option>
+<option value="multiplication">*</option>
+<option value="division">/</option>
+</select>
+<input type="text" name="n1"><font size="20px" color="red">=</font>
+<input type="text" id="rr">
+</form>
+<button onclick="result();">result</button>
+<script type="text/javascript">
+function result()
+{
+	var p1=parseInt(document.f1.n.value);
+	var p3=document.f1.d.value;
+	var p2=parseInt(document.f1.n1.value);
+	if(p3=="plus")
+		document.getElementById("rr").value=p1+p2;
+	if(p3=="minus")
+		document.getElementById("rr").value=p1-p2;
+	if(p3=="multiplication")
+		document.getElementById("rr").value=p1*p2;
+	if(p3=="division")
+		document.getElementById("rr").value=p1/p2;
+}
+
+
+</script>
+</body>
+</center>
+</html>

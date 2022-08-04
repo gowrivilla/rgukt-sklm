@@ -1,0 +1,18 @@
+<!-- display a random image on clicking an existing image -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="k" onclick="change();" src="jk.jpg" width="160" height="120">
+
+<script type="text/javascript">
+function change()
+{
+   var a=['a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg'];
+   var n=Math.random();
+   var l=((n.toPrecision(1))*10);
+   document.getElementById("k").src = a[l];
+}
+</script>
+</body>
+</html>

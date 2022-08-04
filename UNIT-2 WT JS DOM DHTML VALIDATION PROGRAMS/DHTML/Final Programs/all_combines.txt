@@ -1,0 +1,310 @@
+<!--Code to change the text value in text box to uppercase-->
+<html> 
+<head> 
+<script type="text/javascript"> 
+function upperMe() { 
+    var k=document.p.input.value;
+    document.getElementById("input").value = k.toUpperCase();
+} 
+</script> 
+</head> 
+<body> 
+Enter lowercase letters for conversion to uppercase:<br> 
+<form name="p"> 
+<input type="text" name="input" id="input"  onchange="upperMe()" /><br /> 
+</form> 
+</body> 
+</html> 
+----------------------------------------------
+<!-- Finding HTML Elements Using document.forms -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Finding HTML Elements Using document.forms</h2>
+<form id="f" action="">
+  First name: <input type="text" name="v1" value="cse"><br>
+  Last name: <input type="text" name="v2" value="jaya"><br><br>
+</form> 
+<button onclick="myFunction()">Click here</button>
+
+<p id="j"></p>
+
+<script>
+function myFunction() {
+    var x = document.forms["f"];
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("j").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
+---------------------------------
+<!-- Arithmetic operations-->
+<html>
+<head>
+<title>Arithmetic Operations</title>
+<style type="text/css">
+h1{
+font-size:38px;
+font-family:gabriola;
+color:white;
+font-weight:bold;
+background-color:darkmagenta;
+border-radius:10px;
+text-align:center;
+}
+input{
+color:red;
+background-color:aqua;
+font-size:35px;
+}
+input:hover{
+color:navy;
+background-color:yellow;
+font-size:35px;
+}
+select{
+color:red;
+background-color:seashell;
+font-size:35px;
+}
+button{
+font-size:35px;
+color:red;
+background-color:yellow;
+}
+
+
+</style> 
+</head>
+<body>
+<center>
+<h1>Arithematic Operations</h1>
+<form name="f1" >
+<input type="text" name="n">
+<select name="d" >
+<option value="plus">+</option>
+<option value="minus">-</option>
+<option value="multiplication">*</option>
+<option value="division">/</option>
+</select>
+<input type="text" name="n1"><font size="20px" color="red">=</font>
+<input type="text" id="rr">
+</form>
+<button onclick="result();">result</button>
+<script type="text/javascript">
+function result()
+{
+	var p1=parseInt(document.f1.n.value);
+	var p3=document.f1.d.value;
+	var p2=parseInt(document.f1.n1.value);
+	if(p3=="plus")
+		document.getElementById("rr").value=p1+p2;
+	if(p3=="minus")
+		document.getElementById("rr").value=p1-p2;
+	if(p3=="multiplication")
+		document.getElementById("rr").value=p1*p2;
+	if(p3=="division")
+		document.getElementById("rr").value=p1/p2;
+}
+
+
+</script>
+</body>
+</center>
+</html>
+-----------------------------------
+<!-- Basic DOM program in javascript-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First Page</h2>
+
+<p id="j"></p>
+
+<script type="text/javascript">
+document.getElementById("j").innerHTML = "Hello World!";
+</script>
+
+</body>
+</html>
+-------------------------------------
+<!-- changing the color continously-->
+<html>
+<body>
+<script type="text/javascript">
+   var i=0;
+   var k;
+   function changecolor()
+   {
+      k=setInterval(c,1000);
+   }
+   function c()
+   {
+     var p=['skyblue','violet','green','pink','orange','red','yellow'];
+     document.getElementById("j").style.backgroundColor=p[i];
+	 i=i+1;
+	 if(i==7)
+	    i=0;
+   
+   }
+   function stopcolor()
+   {
+      clearInterval(k);
+   }
+</script>
+
+<p id="j">Hi hello welcome to rgukt iiit srikakulam</p>
+<button onclick="changecolor();" >change color</button>
+<button onclick="stopcolor();" >stop color</button>
+</body>
+</html>
+-----------------------------------
+<!-- changing the color of data-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="j">CSE Welcomes you</h1>
+
+<button type="button" 
+onclick="document.getElementById('j').style.color = 'blue'">
+Click Me!</button>
+
+</body>
+</html>
+------------------------------------
+<!-- Changing an image on clicking an existing image -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="k" onclick="change();" src="jk.jpg" width="160" height="120">
+
+<script type="text/javascript">
+function change()
+{
+document.getElementById("k").src = "p.jpg";
+}
+</script>
+</body>
+</html>
+-------------------------------
+<!-- display a random image on clicking an existing image -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="k" onclick="change1();" src="jk.jpg" width="160" height="120">
+<button onclick="stop();">Click here to stop</button>
+<script type="text/javascript">
+ var j;
+function change1()
+{
+    j=setInterval(change, 3000);
+}
+function change()
+{
+   var a=['a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg'];
+   var n=Math.random();
+   var l=((n.toPrecision(1))*10);
+   document.getElementById("k").src = a[l];
+}
+function stop()
+{
+   clearInterval(j);
+}
+</script>
+</body>
+</html>
+------------------------------
+<!-- display a random image on clicking an existing image -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="k" onclick="change();" src="jk.jpg" width="160" height="120">
+
+<script type="text/javascript">
+function change()
+{
+   var a=['a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg'];
+   var n=Math.random();
+   var l=((n.toPrecision(1))*10);
+   document.getElementById("k").src = a[l];
+}
+</script>
+</body>
+</html>
+--------------------------------------
+<!-- code to time counter-->
+<html>
+<head>
+
+</head>
+<body>
+Your Date of Birth is 15-12-2018.
+<b id="jk"></b>to Go.
+
+<script>
+var countDownDate = new Date("Dec 15, 2018 10:00:00").getTime();
+var x = setInterval(tt,1000);
+function tt(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("jk").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "5th Decemebr 2018 is EXPIRED";
+    }
+}
+</script>
+
+</body>
+</html>
+------------------------------------------------
+<!-- alert to not to change the text filed data-->
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="mySelect" onchange="myFunction()" value="cse welcomes you">
+<script>
+function myFunction() {
+    alert("Dont change this field value");
+}
+</script>
+
+</body>
+</html>
+------------------------------------------------
+<!-- Program to take n values from the user and produce their sum-->
+<html>
+<head>
+</head>
+<body onload="oper();">
+<script type="text/javascript">
+function oper()
+{
+     var n=parseInt(prompt("enter how many values you want to enter"));
+	 var sum=0;
+	 for(i=0;i<n;i++)
+	 {
+	     var v=parseInt(prompt("enter the"+(i+1)+"value:"));
+		 sum=sum+v;
+	 }
+	 document.write("the sum of the entered values are:"+sum);
+}
+</script>
+</body>

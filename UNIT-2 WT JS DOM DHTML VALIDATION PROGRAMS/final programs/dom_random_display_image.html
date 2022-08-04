@@ -1,0 +1,27 @@
+<!-- display a random image on clicking an existing image -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="k" onclick="change1();" src="jk.jpg" width="160" height="120">
+<button onclick="stop();">Click here to stop</button>
+<script type="text/javascript">
+ var j;
+function change1()
+{
+    j=setInterval(change, 3000);
+}
+function change()
+{
+   var a=['a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg'];
+   var n=Math.random();
+   var l=((n.toPrecision(1))*10);
+   document.getElementById("k").src = a[l];
+}
+function stop()
+{
+   clearInterval(j);
+}
+</script>
+</body>
+</html>

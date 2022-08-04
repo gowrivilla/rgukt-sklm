@@ -1,0 +1,31 @@
+<!-- code to time counter-->
+<html>
+<head>
+
+</head>
+<body>
+Your Date of Birth is 15-12-2018.
+<b id="jk"></b>to Go.
+
+<script>
+var countDownDate = new Date("Dec 15, 2018 10:00:00").getTime();
+var x = setInterval(tt,1000);
+function tt(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("jk").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "5th Decemebr 2018 is EXPIRED";
+    }
+}
+</script>
+
+</body>
+</html>

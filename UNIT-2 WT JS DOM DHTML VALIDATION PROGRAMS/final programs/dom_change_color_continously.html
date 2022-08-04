@@ -1,0 +1,30 @@
+<!-- changing the color continously-->
+<html>
+<body>
+<script type="text/javascript">
+   var i=0;
+   var k;
+   function changecolor()
+   {
+      k=setInterval(c,1000);
+   }
+   function c()
+   {
+     var p=['skyblue','violet','green','pink','orange','red','yellow'];
+     document.getElementById("j").style.backgroundColor=p[i];
+	 i=i+1;
+	 if(i==7)
+	    i=0;
+   
+   }
+   function stopcolor()
+   {
+      clearInterval(k);
+   }
+</script>
+
+<p id="j">Hi hello welcome to rgukt iiit srikakulam</p>
+<button onclick="changecolor();" >change color</button>
+<button onclick="stopcolor();" >stop color</button>
+</body>
+</html>

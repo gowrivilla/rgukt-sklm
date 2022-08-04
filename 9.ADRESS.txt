@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>9.ADRESS</title>
+ </head>
+<body>
+<center>
+<h1 align="center"><u>9.ADRESS</u></h1>
+<h2><u>REGISTRATION PAGE part-9</u></h2>
+<table border="3">
+<tr>
+<td>
+<form>
+<table cellspacing="10" cellpadding="5">
+<tr>
+<td>ADRESS</td>
+<td><textarea name="adress" cols="25" rows="5"></textarea></td>
+</tr>
+
+</table>
+</form>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!--Code to change the text value in text box to uppercase-->
+<html> 
+<head> 
+<script type="text/javascript"> 
+function upperMe() { 
+    var k=document.p.input.value;
+    document.getElementById("input").value = k.toUpperCase();
+} 
+</script> 
+</head> 
+<body> 
+Enter lowercase letters for conversion to uppercase:<br> 
+<form name="p"> 
+<input type="text" name="input" id="input"  onchange="upperMe()" /><br /> 
+</form> 
+</body> 
+</html> 

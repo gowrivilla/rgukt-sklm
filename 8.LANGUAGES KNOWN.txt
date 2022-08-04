@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>8.LANGUAGES KNOWN</title>
+ </head>
+<body>
+<center>
+<h1 align="center"><u>8.LANGUAGES KNOWN</u></h1>
+<h2><u>REGISTRATION PAGE part-8</u></h2>
+<table border="3">
+<tr>
+<td>
+<form>
+<table cellspacing="10" cellpadding="5">
+<tr>
+<td>LANGUAGES KNOWN</td>
+<td><input type="checkbox" name="lang" value"english/">ENGLISH
+    <input type="checkbox" name="lang" value"telugu/">TELUGU
+    <input type="checkbox" name="lang" value"hindi/">HINDI </td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+<center>
+</body>
+</html>
